@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-# 2017.11.26 23:27:12 CST
+# SOURCE : https://stackoverflow.com/questions/47496287/how-would-i-use-orb-detector-with-image-homography
+
+
 
 ## Find object by orb features matching
 
@@ -8,13 +10,17 @@ import cv2
 # imgname = "duckie_1.jpg"          # query image (small object)
 # imgname2 = "duckie_2.jpg" # train image (large scene)
 
-imgname = "center.jpg"          # query image (small object)
-imgname2 = "left.jpg" # train image (large scene)
+# imgname = "center.jpg"          # query image (small object)
+# imgname2 = "left.jpg" # train image (large scene)
+
+
+imgname = "just_qr.jpg"          # query image (small object)
+imgname2 = "right.jpg" # train image (large scene)
 
 MIN_MATCH_COUNT = 4
 
 ## Create ORB object and BF object(using HAMMING)
-orb = cv2.ORB_create(nfeatures=30)
+orb = cv2.ORB_create(nfeatures=250)
 img1 = cv2.imread(imgname)
 img2 = cv2.imread(imgname2)
 
